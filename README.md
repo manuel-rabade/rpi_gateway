@@ -13,7 +13,7 @@ via:
 
 - 4 consumer grade fiber optic services with gateways that do NAT. The
   gateway addresses are 192.168.10.254, 192.168.11.254, 192.168.12.254
-  and 192.168.13.254.
+  and 192.168.13.254
 
 - 1 dedicated link with a gateway on the address z.z.z.z for the
   x.x.x.x/y network
@@ -32,24 +32,24 @@ see the routing rules and forwarded ports.
 Setup
 -----
 
-1. Aliases for the Ethernet USB dongles
+1.  Aliases for the Ethernet USB dongles
 
-Create `/etc/udev/rules.d/10-network.rules`
+    Create `/etc/udev/rules.d/10-network.rules`
 
-2. Network
+2.  Network
 
-Modify `/etc/conf.d/netcfg` and `/etc/sysctl.conf`
-Create `/etc/network.d/ethernet-*`
+    Modify `/etc/conf.d/netcfg` and `/etc/sysctl.conf`
+    Create `/etc/network.d/ethernet-*`
 
-3. Gateway scripts
+3.  Gateway scripts
 
-Create `/root/bin/gateway` and `/etc/systemd/system/gateway.service`
-Enable the gateway service: `systemctl enable gateway`
+    Create `/root/bin/gateway` and `/etc/systemd/system/gateway.service`
+    Enable the gateway service: `systemctl enable gateway`
 
-4. DNS and DHCP
+4.  DNS and DHCP
 
-Install Dnsmasq: `pacman -S extra/dnsmasq`
-Modify `/etc/dnsmasq.conf` and `/etc/ethers`
+    Install Dnsmasq: `pacman -S extra/dnsmasq`
+    Modify `/etc/dnsmasq.conf` and `/etc/ethers`
 
 Tip: `if [ -f $file ]; then diff -u $file.orig $file; fi` where
 `$file` could be any in this repo
