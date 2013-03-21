@@ -39,17 +39,23 @@ Setup
 2.  Network
 
     Modify `/etc/conf.d/netcfg` and `/etc/sysctl.conf`
+
     Create `/etc/network.d/ethernet-*`
 
 3.  Gateway scripts
 
     Create `/root/bin/gateway` and `/etc/systemd/system/gateway.service`
+
     Enable the gateway service: `systemctl enable gateway`
 
 4.  DNS and DHCP
 
     Install Dnsmasq: `pacman -S extra/dnsmasq`
+
     Modify `/etc/dnsmasq.conf` and `/etc/ethers`
 
-Tip: `if [ -f $file ]; then diff -u $file.orig $file; fi` where
-`$file` could be any in this repo
+Tips
+----
+
+- `if [ -f $file ]; then diff -u $file.orig $file; fi` where `$file`
+  could be any in this repo
