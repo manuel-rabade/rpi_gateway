@@ -1,0 +1,9 @@
+INTERFACE='eth0'
+DESCRIPTION='Local Area Network'
+CONNECTION='ethernet'
+
+IP='static'
+ADDR='192.168.1.254'
+NETMASK='255.255.255.0'
+
+SKIPNOCARRIER='yes'

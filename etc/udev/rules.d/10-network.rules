@@ -1,0 +1,5 @@
+SUBSYSTEM=="net", ATTR{address}=="00:8a:8d:8c:11:da", NAME="wan0"
+SUBSYSTEM=="net", ATTR{address}=="00:8a:8d:8a:1c:b7", NAME="wan1"
+SUBSYSTEM=="net", ATTR{address}=="00:8a:8d:8a:20:0a", NAME="wan2"
+SUBSYSTEM=="net", ATTR{address}=="00:8a:8d:8a:13:1d", NAME="wan3"
+SUBSYSTEM=="net", ATTR{address}=="00:8a:8d:8c:13:e8", NAME="wan4"

@@ -1,0 +1,9 @@
+INTERFACE='wan3'
+DESCRIPTION='Wide Area Network 3'
+CONNECTION='ethernet'
+
+IP='static'
+ADDR='192.168.13.1'
+NETMASK='255.255.255.0'
+
+SKIPNOCARRIER='yes'

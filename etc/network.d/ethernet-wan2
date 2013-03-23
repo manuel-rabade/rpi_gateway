@@ -1,0 +1,9 @@
+INTERFACE='wan2'
+DESCRIPTION='Wide Area Network 2'
+CONNECTION='ethernet'
+
+IP='static'
+ADDR='192.168.12.1'
+NETMASK='255.255.255.0'
+
+SKIPNOCARRIER='yes'

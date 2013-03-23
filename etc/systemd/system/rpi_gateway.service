@@ -1,0 +1,9 @@
+[Unit]
+Description=Raspberry Pi gateway
+After=network.target
+
+[Service]
+ExecStart=/root/rpi_gateway/rpi_gateway.sh
+
+[Install]
+WantedBy=multi-user.target

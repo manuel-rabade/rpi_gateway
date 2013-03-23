@@ -1,0 +1,11 @@
+INTERFACE='wan4'
+DESCRIPTION='Wide Area Network 4'
+CONNECTION='ethernet'
+
+IP='static'
+ADDR='w.w.w.w'
+NETMASK='y.y.y.y'
+GATEWAY='z.z.z.z'
+DNS=('8.8.8.8' '8.8.4.4')
+
+SKIPNOCARRIER='yes'
