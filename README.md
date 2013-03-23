@@ -1,8 +1,9 @@
 Raspberry Pi gateway
 ====================
 
-This is a configuration example of a Raspberry Pi as a netowrk gateway
-with the following topology:
+This is a Raspberry Pi network gateway example for the following
+network architecture:
+
 
                                            wan0 : 192.168.10/254
                                            wan1 : 192.168.11/254
@@ -11,8 +12,11 @@ with the following topology:
                                            wan4 : x.x.x/y
 
 The Raspberry Pi is a model B 512 MB that runs ArchLinux ARM
-2013-02-11 with five USB Ethernet dongles connected to the Internet
-via:
+2013-02-11.
+
+The LAN is connected to the ethernet port on board the Raspberry Pi
+(eth0) and five USB Ethernet dongles (wan0 to wan4) are connected to
+the Internet via:
 
 - 4 consumer grade fiber optic links with gateways that do NAT. The
   gateway addresses are 192.168.10.254, 192.168.11.254, 192.168.12.254
@@ -21,8 +25,7 @@ via:
 - 1 dedicated link with a gateway on the address z.z.z.z for the
   x.x.x.x/y network
 
-The LAN is connected to the Ethernet port on board the Raspberry
-Pi. The network interface configuration for the Raspberry Pi is:
+The Raspberry Pi network interfaces configuration is:
 
     eth0: 192.168.1.254
     wan0: 192.168.10.1
@@ -33,7 +36,7 @@ Pi. The network interface configuration for the Raspberry Pi is:
 
 The LAN address distribution and their Internet routes are:
 
-    FROM            TO              DEVICES             INTERNET LINK
+    FROM            TO              DEVICES             INTERNET ROUTE
     
     192.168.1.1     192.168.1.9     Servers             wan4
     192.168.1.10    192.168.1.49    DHCP fixed by MAC   wan0
