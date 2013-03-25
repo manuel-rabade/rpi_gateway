@@ -49,11 +49,15 @@ forwarded ports.
 Setup
 -----
 
-1.  Aliases for the Ethernet USB dongles
+Steps to reproduce this example:
+
+1.  Setup ArchLinux ARM on your Raspberry Pi.
+
+2.  Aliases for the Ethernet USB dongles
 
     Create `/etc/udev/rules.d/10-network.rules`
 
-2.  Network manager
+3.  Network manager
 
     Disable the default network manager: `systemctl disable
     netcfg@ethernet-eth0.service`
@@ -67,7 +71,7 @@ Setup
 
     Enable the network manager: `systemctl enable netcfg`
 
-3.  Gateway scripts
+4.  Gateway scripts
 
     Create `/root/rpi_gateway/rpi_gateway.sh`,
     `/root/rpi_gateway/lib.sh` and
@@ -75,7 +79,7 @@ Setup
 
     Enable the gateway service: `systemctl enable rpi_gateway`
 
-4.  DNS and DHCP
+5.  DNS and DHCP
 
     Install Dnsmasq: `pacman -S extra/dnsmasq`
 
@@ -88,3 +92,10 @@ Tips
 
 - `if [ -f $file.orig ]; then diff -u $file.orig $file; fi` where
   `$file` could be any in this repo
+
+License
+-------
+
+This work is licensed under the Creative Commons Attribution 3.0
+Unported License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by/3.0/.
