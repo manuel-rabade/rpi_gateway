@@ -17,12 +17,12 @@ iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A INPUT -p icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-iptables -A INPUT -i eth0 -p udp -m multiport --dports 53,67 -j ACCEPT
+iptables -A INPUT -i eth0 -p udp -m multiport --dports 53,67,161 -j ACCEPT
 iptables -A INPUT -j REJECT --reject-with icmp-proto-unreachable
 
 iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A FORWARD -i eth0 -s 192.168.1.0/24 -j ACCEPT
-iptables -A FORWARD -i wan4 -p tcp -m multiport --dports 222,80,443,5000,8080 -j ACCEPT
+iptables -A FORWARD -i wan4 -p tcp -m multiport --dports 22,80,443,5000,8080 -j ACCEPT
 iptables -A FORWARD -j REJECT --reject-with icmp-proto-unreachable
 
 iptables -t mangle -F
