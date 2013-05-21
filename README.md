@@ -87,6 +87,14 @@ Steps to reproduce this example:
 
     Enable the Dnsmasq service: `systemctl enable dnsmasq`
 
+6.  SNMP
+
+    Install Net-SNMP: `pacman -S extra/net-snmp`
+
+    Create `/etc/snmp/snmpd.conf` and `/root/rpi_gateway/snmp.sh`
+
+    Enable the Net-SNMP service: `systemctl enable snmpd`
+
 Tips
 ----
 
