@@ -101,6 +101,9 @@ Tips
 - `if [ -f $file.orig ]; then diff -u $file.orig $file; fi` where
   `$file` could be any in this repo
 
+- see `root/examples/mrtg.cfg` for a mrtg example setup to monitor the
+  Raspberry Pi gateway
+
 License
 -------
 
