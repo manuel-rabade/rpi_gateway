@@ -87,7 +87,7 @@ Enable the network manager:
 Create `/root/rpi_gateway/rpi_gateway.sh`, `/root/rpi_gateway/lib.sh`
 and `/etc/systemd/system/rpi_gateway.service`
 
-Enable the gateway service
+Enable the gateway service:
 
     # systemctl enable rpi_gateway
 
