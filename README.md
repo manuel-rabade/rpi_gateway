@@ -1,8 +1,8 @@
-Raspberry Pi gateway
+Raspberry Pi NATbox
 ====================
 
-This is a Raspberry Pi network gateway example for the following
-network architecture:
+This is a Raspberry Pi NATbox example for the following network
+architecture:
 
 
                                            wan0 : 192.168.10/254
@@ -51,62 +51,72 @@ Setup
 
 Steps to reproduce this example:
 
-1.  Setup ArchLinux ARM on your Raspberry Pi.
+### Install 
 
-2.  Aliases for the Ethernet USB dongles
+Write ArchLinux ARM on your Raspberry Pi SD card and boot the system.
 
-    Create `/etc/udev/rules.d/10-network.rules`
+Update the system:
 
-3.  Network manager
+    # pacman -Syu
 
-    Disable the default network manager: `systemctl disable
-    netcfg@ethernet-eth0.service`
+Change root password:
 
-    Modify `/etc/network.d/ethernet-eth0`, `/etc/conf.d/netcfg` and
-    `/etc/sysctl.conf`
+    # passwd
 
-    Create `/etc/network.d/ethernet-wan0`,
-    `/etc/network.d/ethernet-wan1`, `/etc/network.d/ethernet-wan2`,
-    `/etc/network.d/ethernet-wan3` and `/etc/network.d/ethernet-wan4`
+### Networking
 
-    Enable the network manager: `systemctl enable netcfg`
+Create `/etc/udev/rules.d/10-network.rules`
 
-4.  Gateway scripts
+Disable the default network manager:
 
-    Create `/root/rpi_gateway/rpi_gateway.sh`,
-    `/root/rpi_gateway/lib.sh` and
-    `/etc/systemd/system/rpi_gateway.service`
+    # systemctl disable netcfg@ethernet-eth0.service
 
-    Enable the gateway service: `systemctl enable rpi_gateway`
+Modify `/etc/network.d/ethernet-eth0`, `/etc/conf.d/netcfg` and
+`/etc/sysctl.conf`
 
-5.  DNS and DHCP
+Create `/etc/network.d/ethernet-wan0`, `/etc/network.d/ethernet-wan1`,
+`/etc/network.d/ethernet-wan2`, `/etc/network.d/ethernet-wan3` and
+`/etc/network.d/ethernet-wan4`
 
-    Install Dnsmasq: `pacman -S extra/dnsmasq`
+Enable the network manager: 
 
-    Modify `/etc/dnsmasq.conf` and create `/etc/ethers`
+    # systemctl enable netcfg
 
-    Enable the Dnsmasq service: `systemctl enable dnsmasq`
+### Gateway
 
-6.  SNMP
+Create `/root/rpi_gateway/rpi_gateway.sh`, `/root/rpi_gateway/lib.sh`
+and `/etc/systemd/system/rpi_gateway.service`
 
-    Install Net-SNMP: `pacman -S extra/net-snmp`
+Enable the gateway service
 
-    Create `/etc/snmp/snmpd.conf` and `/root/rpi_gateway/snmp.sh`
+    # systemctl enable rpi_gateway
 
-    Enable the Net-SNMP service: `systemctl enable snmpd`
+### DNS and DHCP
 
-Tips
-----
+Install Dnsmasq:
 
-- `if [ -f $file.orig ]; then diff -u $file.orig $file; fi` where
-  `$file` could be any in this repo
+    # pacman -S extra/dnsmasq`
 
-- see `root/examples/mrtg.cfg` for a mrtg example setup to monitor the
-  Raspberry Pi gateway
+Modify `/etc/dnsmasq.conf` and create `/etc/ethers`
 
-License
--------
+Enable the Dnsmasq service: 
 
-This work is licensed under the Creative Commons Attribution 3.0
-Unported License. To view a copy of this license, visit
-http://creativecommons.org/licenses/by/3.0/.
+    # systemctl enable dnsmasq
+
+### SNMP
+
+Install Net-SNMP:
+
+    # pacman -S extra/net-snmp
+
+Create `/etc/snmp/snmpd.conf` and `/root/rpi_gateway/snmp.sh`
+
+Enable the Net-SNMP service: 
+
+    # systemctl enable snmpd
+
+Monitoring
+----------
+
+See `root/examples/mrtg.cfg` for a mrtg example setup to monitor the
+Raspberry Pi NATbox
