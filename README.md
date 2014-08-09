@@ -120,3 +120,9 @@ Monitoring
 
 See `root/examples/mrtg.cfg` for a mrtg example setup to monitor the
 Raspberry Pi NATbox
+
+License
+-------
+
+This work is licensed under a [Creative Commons Attribution 4.0
+International License](http://creativecommons.org/licenses/by/4.0/).
