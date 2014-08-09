@@ -119,7 +119,12 @@ Monitoring
 ----------
 
 See `root/examples/mrtg.cfg` for a mrtg example setup to monitor the
-Raspberry Pi NATbox
+Raspberry Pi NATbox.
+
+Author
+------
+
+Manuel Rábade <[manuel@rabade.net](mailto:manuel@rabade.net)>
 
 License
 -------
